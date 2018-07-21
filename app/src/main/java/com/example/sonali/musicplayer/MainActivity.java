@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
     int currentSongIndex = 0;
     private boolean isShuffle = false;
     private boolean isRepeat = false;
-
+//test
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -364,7 +364,7 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
 
     public String Timer(long milliseconds){
         String finalTimerString = "";
-        String secondsString = "";
+        String secondsString;
 
         // Convert total duration into time
         int hours = (int)( milliseconds / (1000*60*60));
@@ -411,10 +411,10 @@ public class MainActivity extends AppCompatActivity implements MediaPlayer.OnCom
 
     @Override
     public void onCompletion(MediaPlayer mp) {
-        if(isRepeat==true) {
+        if(isRepeat) {
             playSong(currentSongIndex);
         }
-        else if(isShuffle==true){
+        else if(isShuffle){
             Random rand = new Random();
             currentSongIndex = rand.nextInt((songList.size()-1)+1) ;
             playSong(currentSongIndex);
